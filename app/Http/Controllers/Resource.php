@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use Illuminate\Http\Controller\Request;
 
 class Resource extends Controller
@@ -19,7 +20,14 @@ class Resource extends Controller
      */
     public function create()
     {
-        //
+        $activity = Activity::create([
+            'type -> surf',
+            'user_id -> 1',
+            'datetime -> 2025-03-24',
+            'paid -> false',
+            'notes -> Good Activity',
+            'satisfaction -> 8'
+        ]);
     }
 
     /**
