@@ -14,7 +14,7 @@ class Resource extends Controller
     public function index()
     {
         $activities = Activity::all();
-        return view('activities', ['activities' => $activities] );
+        return view('activities', ['activities' => $activities]);
     }
 
     /**

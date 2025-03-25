@@ -1,3 +1,3 @@
 <div>
-    <p>Welcome</p>    
+    <h1>Welcome {{$name}}</h1>    
 </div>
