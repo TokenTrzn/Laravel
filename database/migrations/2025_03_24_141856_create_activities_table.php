@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->dateTime('datetime');
             $table->boolean('paid')->default(0);
+            $table->text('notes')->nullable()->default(null);
             $table->integer('satisfaction')->nullable()->default(null);
             $table->timestamps();
         });
