@@ -22,7 +22,6 @@ class Resource extends Controller
      */
     public function create()
     {
-
         $activity = Activity::create([
             'type' => 'surf',
             'user_id' => 1,
@@ -66,6 +65,25 @@ class Resource extends Controller
      */
     public function edit(string $id)
     {
+        $activity = Activity::findOrFail($id);
+
+        $activity->update([
+            'type' => 'windsurf',
+            'user_id' => 1,
+            'datetime' => '2025-03-24',
+            'paid' => false,
+            'notes' => null,
+            'satisfaction' => 8,
+        ]);
+
+        return response()->json($activity, 201);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
         $validated = $request->validate([
             'type' => 'required|string',
             'user_id' => 'required|exists:users,id',
@@ -80,18 +98,10 @@ class Resource extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        
     }
 }
