@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\User;
-use Illuminate\Http\Controller\Request;
+use Illuminate\Http\Request;
 
 class Resource extends Controller
 {
@@ -21,15 +21,10 @@ class Resource extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        $activity = Activity::create([
-            'type' => 'surf',
-            'user_id' => 1,
-            'datetime' => '2025-03-24',
-            'paid' => false,
-            'notes' => null,
-            'satisfaction' => 8,
-        ]);
+    {        
+        $activityTypes = ['surf', 'windsurf', 'layak', 'atv', 'hot air ballon'];
+        $users = User::all();
+        return view('newActivity', ['activityTypes' => $activityTypes, 'users' => $users]);
     }
 
     /**

@@ -7,3 +7,4 @@ Route::get('/', function () {
     return view('greeting', ['name' => 'Alberto']);
 });
 Route::resource('activities', Resource::class);
+Route::get('newActivity');

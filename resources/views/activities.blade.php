@@ -10,4 +10,8 @@
                 </form>
             </ol>
         @endforeach
+
+        <a href="{{ route('activities.create') }}">
+            <button>Crear Nueva Actividad</button>
+        </a>
 </div>
