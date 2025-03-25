@@ -102,6 +102,8 @@ class Resource extends Controller
      */
     public function destroy(string $id)
     {
-        
+        $activity = Activity::findOrFail($id);
+        $activity->delete();
+        return response()->json(['message' => 'Actividad eliminada exitosamente.'], 200);
     }
 }
