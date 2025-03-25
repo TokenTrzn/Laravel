@@ -14,4 +14,9 @@ class Activity extends Model
         'notes',
         'satisfaction',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
