@@ -14,14 +14,8 @@
         </div>     
         
         <div class="mb-3">
-            <label for="userId" class="form-label">User ID</label>
-            <select class="form-control" id="userId" name="userId" required>
-                @foreach($users as $user)
-                    <option>
-                        {{ ucfirst($user->id) }}
-                    </option>
-                @endforeach
-            </select>
+            <label for="user_id" class="form-label">User ID</label>
+            <input type="number" name="user_id" id="user_id" />
         </div>      
 
         <div class="mb-3">
@@ -31,7 +25,8 @@
 
         <div>
             <label for="paid">Is Paid</label>
-            <Input type="checkbox" id="paid" name="paid" value="{{ old('paid') }}" required />
+            <input type="hidden" name="paid" value="0">
+            <input type="checkbox" id="paid" name="paid" value="1" />
         </div>
 
         <div class="mb-3">
@@ -43,8 +38,16 @@
             <label for="satisfaction" class="form-label">Satisfacción (1-10)</label>
             <input type="number" class="form-control" id="satisfaction" name="satisfaction" min="1" max="10" value="{{ old('satisfaction') }}">
         </div>
-        <a href="{{ route('activities.index') }}">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </a>
+
+        <button type="submit" onclick="return confirm('Are you sure you want to create this activity?')">SAVE</button>
+        @if ($errors->any())
+        <div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     </form>
 </div>

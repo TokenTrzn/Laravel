@@ -41,9 +41,17 @@ class Resource extends Controller
             'satisfaction' => 'nullable|integer|min:0|max:10',
         ]);
 
-        $activity = Activity::create($validated);
-        return response()->json($activity, 201);
+        $activity = new Activity();
+        $activity->type = $validated['type'];
+        $activity->user_id = $validated['user_id']; 
+        $activity->datetime = $validated['datetime'];
+        $activity->paid = $validated['paid'];  
+        $activity->notes = $validated['notes'];
+        $activity->satisfaction = $validated['satisfaction'];
+    
+        $activity->save();
 
+        return redirect()->route('activities.index')->with('success', 'Activity created successfully.');
     }
 
     /**
@@ -71,7 +79,7 @@ class Resource extends Controller
             'satisfaction' => 8,
         ]);
 
-        return response()->json($activity, 201);
+        return response()->json($activity);
     }
 
     /**
@@ -79,6 +87,8 @@ class Resource extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $activity = Activity::findOrFail($id);
+
         $validated = $request->validate([
             'type' => 'required|string',
             'user_id' => 'required|exists:users,id',
@@ -88,8 +98,9 @@ class Resource extends Controller
             'satisfaction' => 'nullable|integer|min:0|max:10',
         ]);
 
-        $activity = Activity::update($validated);
-        return response()->json($activity, 201);
+        $activity->update($validated);
+
+        return response()->json($activity);
     }
 
     /**
@@ -97,8 +108,13 @@ class Resource extends Controller
      */
     public function destroy(string $id)
     {
-        $activity = Activity::findOrFail($id);
-        $activity->delete();
-        return response()->json(['message' => 'Actividad eliminada exitosamente.'], 200);
+        try {
+            $activity = Activity::find($id);
+            $activity->delete();
+
+            return response()->json(['message' => 'Activity deleted successfully']);
+        } catch (\Throwable $th) {
+            return('Delete not found');
+        }
     }
 }
