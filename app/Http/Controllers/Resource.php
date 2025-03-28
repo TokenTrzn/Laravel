@@ -59,7 +59,11 @@ class Resource extends Controller
      */
     public function show(string $id)
     {
-        $activity = Activity::findOrFail($id); 
+        try {
+            $activity = Activity::findOrFail($id); 
+        } catch () {
+            
+        }
         return response()->json($activity);
     }
 
