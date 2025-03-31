@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
     protected $fillable = [
-        'id',
         'photo',
         'number',
         'name',
@@ -16,7 +15,6 @@ class Room extends Model
         'price',
         'offerPrice',
         'status',
-        'bookings',
     ];
 
     public function booking()
