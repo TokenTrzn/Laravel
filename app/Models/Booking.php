@@ -21,6 +21,7 @@ class Booking extends Model
         'price',
         'description',
         'amenities',
+        'room_id'
     ];
 
     public function booking()

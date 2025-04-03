@@ -1,0 +1,244 @@
+.footer {
+    width: 100%;
+    display: block;
+    position: relative;
+
+    &__background {
+        opacity: 2%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__media {
+        @media only screen and (min-width: 1000px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 4rem 2rem;
+        }
+    }
+
+    &__info {
+
+        &__title {
+            display: inline-block;
+            padding: 1rem;
+
+            &__icon {
+                display: inline-block;
+                text-align: center;
+                background-color: #BEAD8E;
+                padding: .5rem 1rem;
+                box-shadow: 0px 1rem 1.5rem 0px #8B8B8B26;
+
+                &__content {
+                    font-size: 2.5rem;
+                    color: #fff;
+                    font-family: 'Archivo';
+                    font-weight: 700;
+                    line-height: 2.7rem;
+                    padding: .4rem;
+                }
+            }
+
+            &__text {
+                display: inline-block;
+                padding-left: 2rem;
+                font-size: 1.625rem;
+                letter-spacing: 2.6px;
+                font-family: 'Archivo';
+                line-height: 1.75rem;
+
+                &__up {
+                    font-weight: 700;
+                }
+
+                &__down {
+                    font-weight: 400;
+                }
+            }
+
+            @media only screen and (min-width: 1000px) {
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+            }
+        }
+
+        &__text {
+            padding: 2rem 1rem;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.625rem;
+            color: #777777;
+            font-family: 'Archivo';
+        }
+
+        &__social {
+            display: block;
+            padding-left: 1.2rem;
+
+            &__item {
+                display: inline-block;
+                background: #f8f8f8;
+                padding: .4rem .5rem;
+                margin-right: .6rem;
+            }
+
+            @media only screen and (min-width: 1000px) {
+                :hover {
+                    background: #bead8e;
+                    
+                }
+            }
+            
+        }
+
+        @media only screen and (min-width: 1000px) {
+            flex: 1;
+        }
+    }
+
+    &__services {
+
+        &__title {
+            font-family: 'Old Standard TT';
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            color: #222222;
+            padding: 1.5rem 1rem;
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, auto);
+            gap: 1rem;
+            list-style: none;
+            padding: 0 1rem;
+
+            &__item {
+                font-family: 'Roboto';
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 2.5rem;
+                color: #777777;
+            }
+
+            &__item:nth-child(-n+6) {
+                grid-column: 1;
+            }
+
+            &__item:nth-child(7) {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            &__item:nth-child(8) {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            &__item:nth-child(9) {
+                grid-column: 2;
+                grid-row: 3;
+            }
+
+            &__item:nth-child(10) {
+                grid-column: 2;
+                grid-row: 4;
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            flex: 1.3;
+        }
+    }
+
+    &__contact-us {
+        padding-top: 1.5rem;
+
+        &__title {
+            font-family: 'Old Standard TT';
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            color: #222222;
+            padding: 1rem 1rem;
+            padding-bottom: 2.5rem;
+        }
+
+        &__row {
+            display: inline-block;
+            padding-bottom: 2.75rem;
+
+            &__icon {
+                display: inline-block;
+                padding-left: 1rem;
+            }
+
+            &__info {
+                display: inline-block;
+                padding-left: 1rem;
+
+                &__title {
+                    font-family: 'Old Standard TT';
+                    font-weight: 400;
+                    font-size: 1.25rem;
+                    line-height: 1.5rem;
+                }
+
+                &__text {
+                    font-family: 'Roboto';
+                    font-weight: 400;
+                    font-size: .875rem;
+                    line-height: 1rem;
+                    color: #777777;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            flex: 1;
+            flex-direction: column;
+        }
+    }
+
+    &__copyright {
+        display: block;
+        text-align: start;
+        padding: 1rem;
+        background-color: #f8f8f8;
+
+        &__info {
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.15rem;
+            letter-spacing: -.5px;
+
+            &__separator {
+                padding: 0 1.4rem;
+            }
+        }
+
+        #text-up {
+            padding-bottom: 1.5rem;
+
+            @media only screen and (min-width: 1000px) {
+                padding: 0;
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+        }
+    }
+}

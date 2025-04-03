@@ -12,15 +12,6 @@ class RoomSeeder extends Seeder
      */
     public function run(): void
     {
-        Room::create([
-            'photo' => 'www.foto.png',
-            'number' => 3456,
-            'name' => 'Alberto',
-            'type' => 'Premium A',
-            'amenities' => ['Wifi', 'Shower', 'TV'],
-            'price' => 120.99,
-            'offerPrice' => 99.99,
-            'status' => 'Booking',
-        ]);
+        Room::factory(10)->create();
     }
 }

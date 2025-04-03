@@ -1,0 +1,288 @@
+@import './mixin.scss';
+
+.ultimate {
+    background-color: #333333;
+    padding: 4.6rem 1.2rem 0;
+
+    &__title {
+        @include ultimateTitle;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        @include ultimateDescription;
+        margin-bottom: 3rem;
+
+        @media only screen and (min-width: 1000px)  {
+            margin-bottom: 0;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        &__links {
+            background-color: #FFFFFF;
+            overflow: visible;
+            padding: 1rem 1.5rem;
+            display: flex;
+            flex-direction: row;
+
+            &__text {
+                font-family: "Archivo";
+                font-size: 1rem;
+                font-weight: 700;
+                text-decoration: none;
+                color: #bead8e;
+
+                a {
+                    color: #222222;
+                    text-decoration: none;
+                }
+            }          
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        padding: 4rem 20% 0;
+    }
+}
+
+.aboutUs {
+    text-align: center;
+
+    &__video {
+        width: 100%;
+        height: auto;
+    }
+
+    &__title {
+        font-family: 'Old Standard TT';
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        letter-spacing: -1.16px;
+        color: #222222;
+        padding: 2rem 1rem;
+
+        @media only screen and (min-width: 1000px) {
+            font-size: 4.5rem;
+            line-height: 5.5rem;
+            letter-spacing: -2.16px;
+            padding: 2rem 0;
+        }
+    }
+
+    &__icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+
+        &__background {
+            padding: 2rem 0;
+
+            &__item {
+                width: auto;
+                height: 3.3rem;
+            }
+
+            &__text {
+                font-family: 'Archivo';
+                font-weight: 700;
+                font-size: .75rem;
+                letter-spacing: 2.4px;
+                color: #222222;
+            }
+        }
+    }
+
+    @media screen {
+        padding: 4rem 20% 0;
+    }
+}
+
+.restaurant {
+    padding: 2.5rem;
+
+    &__img {
+        width: 100%;
+    }
+
+    &__text {
+        font-family: 'Archivo';
+        font-weight: 700;
+        font-size: .875rem;
+        line-height: 1rem;
+        letter-spacing: 2.8px;
+        color: #777777;
+        padding: 1.5rem 0;
+    }
+
+    &__title {
+        font-family: 'Old Standard TT';
+        font-size: 2.5rem;
+        font-weight: 400;
+        line-height: 3.1rem;
+        letter-spacing: -1.5px;
+        color: #222222;
+        padding-bottom: 2rem;
+    }
+
+    &__description {
+        font-family: 'Archivo';
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        color: #777777;
+        padding-bottom: 1rem;
+    }
+
+    &__button {
+        @include defaultButton;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.facilities {
+    background: #222222;
+    padding: 1rem;
+    text-align: center;
+
+    &__title {
+        font-family: 'Archivo';
+        font-size: .875rem;
+        font-weight: 700;
+        line-height: 1rem;
+        letter-spacing: 2.8px;
+        color: #ffffff;
+        padding-bottom: 1rem;
+        padding-top: 2rem;
+    }
+
+    &__subtitle {
+        font-family: 'Old Standard TT';
+        font-size: 3.5rem;
+        font-weight: 400;
+        line-height: 3.75rem;
+        letter-spacing: -1.2px;
+        color: #ffffff;
+    }
+
+    &__swiper {
+        padding: 1rem;
+        text-align: start;
+
+        &__slide {
+            position: relative;
+            background: #292929;
+            padding: 1rem;
+            margin-bottom: 3rem;
+
+            &__background {
+                position: absolute;
+                color: #222222;
+                font-family: Archivo;
+                font-size: 7.5rem;
+                font-weight: 700;
+                line-height: 8.125rem;
+                right: 5%;
+                top: 0;
+            }
+
+            &__icon {
+                padding: 3rem 1rem;
+            }
+
+            &__title {
+                font-family: 'Old Standard TT';
+                font-size: 1.875rem;
+                font-weight: 400;
+                line-height: 1.875rem;
+                letter-spacing: -0.9px;
+                color: #ffffff;
+                padding-bottom: 2rem;
+            }
+
+            &__text {
+                font-family: 'Archivo';
+                font-size: .875rem;
+                font-weight: 400;
+                line-height: 1.5rem;
+                color: #ffffff;
+                padding-right: 2rem;
+                padding-bottom: 3rem;
+            }
+        }
+    }
+}
+
+.counter {
+    padding: 3rem 1rem;
+
+    &__title {
+        font-family: 'Archivo';
+        font-size: .875rem;
+        font-weight: 700;
+        line-height: 1rem;
+        letter-spacing: 2.8px;
+        color: #777777;
+        padding-bottom: 1.5rem;
+    }
+
+    &__subtitle {
+        font-family: 'Old Standard TT';
+        font-size: 3.5rem;
+        font-weight: 400;
+        line-height: 3.75rem;
+        letter-spacing: -1.2px;
+        color: #222222;
+        padding-bottom: 2rem;
+    }
+
+    &__facts {
+
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem 1rem;
+
+            &__img {}
+
+            &__text {
+                margin-right: 2rem;
+                font-family: 'Old Standard TT';
+                font-size: 3.75rem;
+                font-weight: 400;
+                line-height: 2rem;
+                letter-spacing: -1.8px;
+
+                span {
+                    font-family: 'Roboto';
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: #777777;
+                    line-height: 1rem;
+                }
+            }
+
+            &__icon {
+                padding-right: 1rem;
+            }
+        }
+    }
+
+    &__swiper {
+
+        &__slide {
+            padding: 2rem 1rem;
+
+            &__img {
+                width: 100%;
+            }
+        }
+    }
+}

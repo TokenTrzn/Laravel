@@ -1,0 +1,135 @@
+@import "./mixin.scss";
+
+.contact {
+
+    &__item {
+        display: flex;
+        padding: 6rem 2rem;
+        position: relative;
+        flex: 1;
+
+        &__background {
+            position: absolute;
+            right: 0;
+            top: 15%;
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 12.5rem;
+            letter-spacing: -6px;
+            color: #f8f8f8;
+            z-index: -1;
+        }
+
+        &__icon {
+            height: 2rem;
+            width: auto;
+        }
+
+        &__title {
+            font-family: 'Old Standard TT';
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+            color: #222222;
+            padding-left: 1.5rem;
+
+            span {
+                display: block;
+                font-family: 'Roboto';
+                font-size: .875rem;
+                line-height: 1rem;
+                color: #777777;
+            }
+        }
+
+    }
+
+    &__media {
+        @media only screen and (min-width: 1000px) {
+            display: flex;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        margin: 3rem 0;
+        padding: 0 10%;
+    }
+
+    @media only screen and (min-width: 1000px) {
+        padding: 0 10%;
+    }
+}
+
+.form {
+    padding: 1rem;
+    margin: 2rem 0;
+    gap: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__item {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        &__icon {
+            position: absolute;
+            left: 10px;
+            pointer-events: none;
+        }
+
+        &__input {
+            color: #777;
+            font-family: "Roboto";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            width: 100%;
+            height: 65px;
+            padding: 10px 10px 10px 40px;
+            background-color: #f8f8f8;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+
+    &__button {
+        width: 75%;
+        padding: 1.5rem 0;
+        border: none;
+        margin-top: 6rem;
+        background: #BEAD8E;
+        font-family: 'Roboto';
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.1rem;
+        letter-spacing: 3.2px;
+        color: #ffffff;
+    }
+
+    @media only screen and (min-width: 1000px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 25%;
+    }
+}
+
+#messageInput {
+    @media only screen and (min-width: 1000px) {
+        grid-column: span 2;
+        width: 100%;
+    }
+}
+
+#formButton {
+    @media only screen and (min-width: 1000px) {
+        grid-column: span 2;
+        width: 50%;
+        margin: 0 auto;
+    }
+}

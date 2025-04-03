@@ -1,0 +1,118 @@
+@import './mixin';
+
+.rooms {
+  padding: 3rem 1.2rem 0;
+
+  &__item {
+    @media only screen and (min-width: 1000px) {
+      display: flex;
+      padding: 1% 20%;
+    }
+
+    &__info {
+      @media only screen and (min-width: 1000px) {
+        flex: 1;
+      }
+    }
+  }
+
+  &__image {
+    @media only screen and (min-width: 1000px) {
+      flex: 1;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__iconos {
+    text-align: center;
+
+    &__image {
+      position: relative;
+      transform: translateY(-50%);
+      z-index: 9;
+
+      @media only screen and (min-width: 1000px) {
+        transform: translateX(-1rem);
+      }
+    }
+  }
+
+  &__title {
+    @include roomTitle;
+    text-align: center;
+    margin-top: -1.5rem;
+
+    @media only screen and (min-width: 1000px) {
+      text-align: start;
+      padding: 0 1.3rem;
+    }
+  }
+
+  &__description {
+    @include roomDescription;
+    text-align: center;
+    padding: 0 1.3rem;
+    margin-bottom: 0;
+
+    @media only screen and (min-width: 1000px) {
+      text-align: start;
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+    p {
+      @media only screen and (min-width: 1000px) {
+          
+      }
+
+      span {
+        @media only screen and (min-width: 1000px) {
+        
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #777777;
+    }
+
+    p:nth-child(1) {
+      color: #BEAD8E;
+    }
+
+    p:nth-child(2) {
+      color: #BDBDBD;
+      margin-bottom: 3rem;
+
+      @media only screen and (min-width: 1000px) {
+        margin: 0;
+      }
+    }
+
+    p:nth-child(1),
+    p:nth-child(2) {
+      font-family: "Archivo";
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 43px;
+    }
+
+    @media only screen and (min-width: 1000px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    padding: 3rem 0;
+  }
+}

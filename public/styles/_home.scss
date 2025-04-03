@@ -1,0 +1,808 @@
+@import './mixin';
+
+.ultimateHome {
+    background-color: #333333;
+    padding: 4.6rem 1.2rem 0;
+
+    &__title {
+        @include ultimateTitle;
+        margin-bottom: 2.5rem;
+        margin-right: 1rem;
+    }
+
+    &__description {
+        @include ultimateDescription;
+        margin-bottom: 2rem;
+
+        @media only screen and (min-width: 1000px) {
+            font-size: 7.5rem;
+            line-height: 8.125rem;
+            letter-spacing: -3.6px;
+        }
+    }
+
+    &__media {
+        @media only screen and (min-width:1000px) {
+            display: flex;
+            width: 53%;
+        }
+    }
+
+    &__button {
+        width: 75%;
+        border: none;
+        border-radius: 0;
+        background: #BEAD8E;
+        padding: 1.4rem 2rem;
+        color: #FFFFFF;
+        font-family: 'Archivo';
+        font-weight: 400;
+        font-size: .875rem;
+        letter-spacing: 2.8px;
+        margin-bottom: 2rem;
+
+    }
+
+    #learnButton {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .3);
+
+        @media only screen and (min-width: 1000px) {
+            margin-left: 2rem;
+        }
+    }
+
+    @media only screen and (min-width:1000px) {
+        padding: 6rem 4rem;
+    }
+}
+
+.availability {
+    background-color: #222222;
+    padding: 2rem 1rem;
+
+    &__items {
+        margin-bottom: 2rem;
+
+        &__label {
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.175rem;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        &__input {
+            width: 90%;
+            max-width: 350px;
+            border: none;
+            border-bottom: 2px solid #BEAD8E;
+            background-color: #222222;
+            color: #686868;
+            padding: 0.4rem;
+            cursor: pointer;
+            margin-bottom: 1rem 0;
+        }
+
+        &__input::-webkit-calendar-picker-indicator {
+            order: -1;
+            filter: invert(0.5) sepia(1);
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        @media only screen and (min-width: 1000px) {
+            margin-top: 3%;
+        }
+    }
+
+    &__button {
+        width: 75%;
+        border: none;
+        border-radius: 0;
+        background: #BEAD8E;
+        padding: 1.4rem 2rem;
+        color: #FFFFFF;
+        font-family: 'Archivo';
+        font-weight: 400;
+        font-size: .875rem;
+        letter-spacing: 2.8px;
+        margin: 1rem 0;
+
+        @media only screen and (min-width: 1000px) {
+            width: 30%;
+            margin-left: 17%;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        display: flex;
+        align-items: center;
+        padding: 2rem 4rem;
+        margin-bottom: 6rem;
+    }
+}
+
+.about {
+    padding: 1rem;
+    margin: 3rem 0;
+
+    &__title {
+        font-family: "Archivo";
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 2.8px;
+        color: #777777;
+    }
+
+    &__subtitle {
+        font-family: "Old Standard TT";
+        font-weight: 100;
+        font-size: 3.5rem;
+        vertical-align: top;
+        letter-spacing: -1.2px;
+        color: #111111;
+        margin-top: 32px;
+        margin-right: 30px;
+    }
+
+    &__description {
+        font-family: "Archivo";
+        font-size: 14px;
+        line-height: 24px;
+        color: #777777;
+        text-align: left;
+        vertical-align: top;
+        margin-top: 16px;
+        margin-right: 20px;
+
+        @media only screen and (min-width: 1000px) {
+            width: 75%;
+        }
+    }
+
+    &__button {
+        @include defaultButton;
+    }
+
+    &__img {
+        width: 100%;
+        padding: 2rem 2rem 0 2rem;
+        margin-top: 2rem;
+
+        @media only screen and (min-width: 1000px) {
+            margin-top: 0;
+            width: 80%;
+            padding: 0;
+        }
+    }
+
+    &__strongTeam {
+        text-align: center;
+
+        &__icon {
+            margin: 1.5rem 0;
+        }
+
+        &__title {
+            font-family: 'Old Standard TT';
+            font-size: 1.875rem;
+            font-weight: 400;
+            line-height: 1.875rem;
+            letter-spacing: -0.9px;
+            margin-bottom: 1rem;
+        }
+
+        &__description {
+            font-family: 'Roboto';
+            font-size: .875rem;
+            font-weight: 400;
+            line-height: 1.375rem;
+            margin-bottom: 2rem;
+            padding: 0 3rem;
+        }
+
+        @media only screen and (min-width: 1000px) {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+        }
+    }
+
+    &__luxuryRoom {
+        text-align: center;
+
+        &__info {
+            background: #222222;
+            margin: 0 2rem;
+            margin-top: -.3rem;
+            padding: 3rem 1rem;
+
+            &__icon {
+                margin-bottom: 1.5rem;
+            }
+
+            &__title {
+                font-family: 'Old Standard TT';
+                font-size: 1.875rem;
+                font-weight: 400;
+                line-height: 1.875rem;
+                letter-spacing: -0.9px;
+                margin-bottom: 1rem;
+                color: #ffffff;
+            }
+
+            &__description {
+                font-family: 'Roboto';
+                font-size: .875rem;
+                font-weight: 400;
+                line-height: 1.375rem;
+                margin-bottom: 2rem;
+                padding: 0 2rem;
+                color: #ffffff;
+            }
+
+            @media only screen and (min-width: 1000px) {
+                margin-top: 2rem;
+                padding: 1rem;
+                width: 80%;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 8rem;
+
+        .left {
+            display: flex;
+            flex: 1;
+        }
+    
+        .right {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+
+.homeRooms {
+    text-align: center;
+
+    &__title {
+        font-family: 'Archivo';
+        font-size: .875rem;
+        font-weight: 700;
+        line-height: 1rem;
+        letter-spacing: 2.8px;
+        color: #777777;
+        padding-bottom: 1.5rem;
+    }
+
+    &__subtitle {
+        font-family: 'Old Standard TT';
+        font-size: 3.5rem;
+        font-weight: 400;
+        line-height: 3.75rem;
+        letter-spacing: -1.2px;
+        color: #222222;
+        padding-bottom: 2rem;
+
+        @media only screen and (min-width: 1000px) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__swiper {
+        position: relative;
+
+        &__img {
+            width: 100%;
+            padding: 1rem 0;
+
+            @media only screen and (min-width: 1000px) {
+                width: 50%;
+            }
+        }
+
+        &__icons {
+            position: absolute;
+            right: 10%;
+            bottom: 24.8rem;
+
+            @media only screen and (min-width: 1000px) {
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &__info {
+            background-color: #ffffff;
+            padding-top: 3rem;
+            text-align: center;
+
+            &__title {
+                @include roomTitle;
+
+                @media only screen and (min-width: 1000px) {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            &__description {
+                @include roomDescription;
+
+                @media only screen and (min-width: 1000px) {
+                    width: 75%;
+                }
+            }
+
+            &__price {
+                font-family: 'Archivo';
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 1.1rem;
+                color: #BEAD8E;
+                padding-bottom: 2rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+
+                a {
+                    text-decoration: none;
+                    color: #BDBDBD;
+                }
+
+                @media only screen and (min-width: 1000px) {
+                    align-items: center;
+                    font-size: 2rem;
+                    padding: 0;
+                }
+            }
+
+            .desktop-room-desc {
+                @media only screen and (min-width: 1000px) {
+                    width: 60%;
+                }
+            }
+
+            @media only screen and (min-width: 1000px) {
+                position: absolute;
+                bottom: -1rem;
+                display: flex;
+                text-align: justify;
+                padding: 1rem 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40%;
+                z-index: 10;
+                justify-content: space-between;
+            }
+        }
+
+        .swiper-button-next::after {
+            margin-right: 2rem;
+
+            @media only screen and (min-width: 1000px) {
+                margin: 0 40rem 0 1rem;
+                background: #BDAC8D;
+            }
+        }
+
+        .swiper-button-prev::after {
+            margin-left: 2rem;
+
+            @media only screen and (min-width: 1000px) {
+                margin: 0 1rem 0 40rem;
+                background: #BDAC8D;
+            }
+        }
+    }
+}
+
+.introVideo {
+    padding: 1rem;
+    background: #222222;
+    position: relative;
+
+    &__title {
+        font-family: "Archivo";
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 2.8px;
+        color: #BDAC8D;
+        margin-top: 2rem;
+    }
+
+    &__subtitle {
+        font-family: "Old Standard TT";
+        font-weight: 100;
+        font-size: 3.5rem;
+        vertical-align: top;
+        letter-spacing: -1.2px;
+        color: #ffffff;
+        margin-top: 32px;
+        margin-right: 30px;
+    }
+
+    &__description {
+        font-family: "Archivo";
+        font-size: 14px;
+        line-height: 24px;
+        color: #c2c2c2;
+        text-align: left;
+        vertical-align: top;
+        margin-top: 16px;
+        margin-right: 20px;
+
+        @media only screen and (min-width: 1000px) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__video {
+        width: 100%;
+        padding: 2rem 0;
+
+        @media only screen and (min-width: 1000px) {
+            position: absolute;
+            width: 30%;
+            height: 60%;
+            right: 20%;
+            top: 20%;
+        }
+    }
+
+    &__button {
+        @include defaultButton;
+        margin-bottom: 2rem;
+    }
+
+    .video-desktop-info {
+        @media only screen and (min-width: 1000px) {
+            width: 40%;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        margin: 8rem 0;
+        padding: 8rem;
+        background: linear-gradient(to right, #222222 70%, #BEAD8E 70%);
+    }
+}
+
+.facilitiesHome {
+    background: #ffffff;
+    padding: 1rem;
+    text-align: center;
+
+    &__desktop {
+        display: none;
+    }
+
+    &__title {
+        font-family: 'Archivo';
+        font-size: .875rem;
+        font-weight: 700;
+        line-height: 1rem;
+        letter-spacing: 2.8px;
+        color: #777777;
+        padding-bottom: 1rem;
+        padding-top: 2rem;
+    }
+
+    &__subtitle {
+        font-family: 'Old Standard TT';
+        font-size: 3.5rem;
+        font-weight: 400;
+        line-height: 3.75rem;
+        letter-spacing: -1.2px;
+        color: #222222;
+    }
+
+    &__swiper {
+        padding: 1rem;
+        text-align: start;
+
+        &__slide {
+            position: relative;
+            background: #ffffff;
+            padding: 1rem;
+            margin-bottom: 3rem;
+
+            &__background {
+                position: absolute;
+                color: #222222;
+                opacity: 4%;
+                font-family: 'Archivo';
+                font-size: 7.5rem;
+                font-weight: 700;
+                line-height: 8.125rem;
+                right: 5%;
+                top: 0;
+            }
+
+            &__icon {
+                padding: 3rem 1rem;
+            }
+
+            &__title {
+                font-family: 'Old Standard TT';
+                font-size: 1.875rem;
+                font-weight: 400;
+                line-height: 1.875rem;
+                letter-spacing: -0.9px;
+                color: #222222;
+                padding-bottom: 2rem;
+            }
+
+            &__text {
+                font-family: 'Archivo';
+                font-size: .875rem;
+                font-weight: 400;
+                line-height: 1.5rem;
+                color: #777777;
+                padding-right: 2rem;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        &__swiper {
+            display: none !important;
+        }
+
+        &__desktop {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 2rem;
+            width: 100%;
+            padding: 1rem 20%;
+            text-align: start;
+
+            &__item {
+                position: relative;
+                background: #ffffff;
+                padding: 1rem;
+                margin-bottom: 3rem;
+
+                &__background {
+                    position: absolute;
+                    color: #222222;
+                    opacity: 4%;
+                    font-family: 'Archivo';
+                    font-size: 7.5rem;
+                    font-weight: 700;
+                    line-height: 8.125rem;
+                    right: 5%;
+                    top: 0;
+                }
+
+                &__icon {
+                    padding: 3rem 1rem;
+                }
+
+                &__title {
+                    font-family: 'Old Standard TT';
+                    font-size: 1.875rem;
+                    font-weight: 400;
+                    line-height: 1.875rem;
+                    letter-spacing: -0.9px;
+                    color: #222222;
+                    padding-bottom: 2rem;
+                }
+
+                &__text {
+                    font-family: 'Archivo';
+                    font-size: .875rem;
+                    font-weight: 400;
+                    line-height: 1.5rem;
+                    color: #777777;
+                    padding-right: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    position: relative;
+    height: 9rem;
+    overflow: hidden;
+
+    &__icon {
+        position: absolute;
+        transform: scale(.5);
+        right: -20%;
+        top: -20%;
+
+        @media only screen and (min-width: 1000px) {
+            display: none;
+        }
+    }
+
+    &__icon-desktop {
+        display: none;
+
+        @media only screen and (min-width: 1000px) {
+            display: block;
+            position: absolute;
+            margin-left: 2rem;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        height: 16rem;
+    }
+}
+
+
+.menu {
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    &__title {
+        font-family: 'Archivo';
+        font-size: .875rem;
+        font-weight: 700;
+        line-height: 1rem;
+        letter-spacing: 2.8px;
+        color: #777777;
+        padding-bottom: 1rem;
+    }
+
+    &__subtitle {
+        font-family: 'Old Standard TT';
+        font-size: 3.5rem;
+        font-weight: 400;
+        line-height: 3.75rem;
+        letter-spacing: -1.2px;
+        color: #222222;
+        padding-bottom: 2rem;
+    }
+
+    &__swiper {
+        padding-bottom: 3rem;
+
+        &__item {
+            display: flex;
+            padding-bottom: 1rem;
+
+            &__img {
+                width: 40%;
+            }
+
+            &__info {
+                padding-left: 1.5rem;
+
+                &__title {
+                    font-family: 'Old Standard TT';
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    line-height: 1.5rem;
+                    letter-spacing: -0.72px;
+                    color: #222222;
+                    padding-bottom: .5rem;
+                }
+
+                &__description {
+                    font-family: 'Roboto';
+                    font-size: .875rem;
+                    font-weight: 400;
+                    line-height: 1.5rem;
+                    color: #222222;
+                }
+            }
+        }
+
+        #last {
+            padding-bottom: 0;
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            margin-bottom: -22rem;
+            @media only screen and (min-width: 1000px) {
+                display: none;
+            }
+        }
+
+        .swiper-button-next::after {
+            margin-right: 2rem;
+        }
+
+        .swiper-button-prev::after {
+            margin-left: 32rem;
+        }
+    }
+
+    &__swiper2 {
+
+        &__slide {
+            padding: 2rem 1rem;
+
+            &__img {
+                width: 100%;
+            }
+        }
+    }
+
+    .swiper2 {
+        @media only screen and (min-width: 1000px) {
+            display: none;
+        }
+    }
+
+    &__desktop {
+        display: none;
+
+        &__item {            
+            flex: 1;
+
+            &__image {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            margin: 4rem 0;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        margin: -4rem 20%;
+    }
+}
+
+.achievements {
+    text-align: center;
+    background: #222222;
+    padding: 3rem 0;
+
+    &__item {
+        padding-bottom: 3rem;
+
+        &__img {}
+
+        &__text {
+            font-family: 'Roboto';
+            font-size: 3.75rem;
+            font-weight: 700;
+            line-height: 5rem;
+            color: #ffffff;
+
+            span {
+                font-size: 1rem;
+                line-height: 1.3rem;
+            }
+
+        }
+
+        &__description {
+            font-family: 'Roboto';
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.3rem;
+            color: #999999;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        margin: 3rem;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

@@ -11,54 +11,63 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $bookings = Booking::all();
+        return view('bookings', ['bookings' => $bookings]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $bookings = Booking::all();
+        return view('bookings', ['bookings' => $bookings]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required|string',
+            'date'=> 'required|date',
+            'check_in' => 'required|date',
+            'check_out'=> 'required|date',
+            'request' => 'required|string',
+            'status' => 'required|boolean',
+            'room_id' => 'required|integer',
+        ]);
+
+        $bookings = new Booking();
+        $bookings -> name = $validate['name'];
+        $bookings -> date = $validate['date'];
+        $bookings -> check_in = $validate['check_in'];
+        $bookings -> check_out = $validate['check_out'];
+        $bookings -> request = $validate['request'];
+        $bookings -> status = $validate['status'];
+        $bookings -> room_id = $validate['room_id'];
+
+        $bookings->save();
+
+        return ('Booking Create');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    public function show(string $id){
+        $bookings = Booking::findOrFail($id);
+        return response()->json($bookings);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
+    
     public function edit(string $id)
     {
-        //
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function updated(string $id){
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        try{
+            $bookings = Booking::find($id);
+            $bookings = Booking::delete();
+            return response()->json['message' => 'Booking delete '];
+        } catch(){
+            return ('Delete Booking not found');
+        }
     }
 }
