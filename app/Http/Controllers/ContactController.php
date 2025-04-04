@@ -3,62 +3,64 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $contacts = Contact::all();
+        return view('contacts',['contacts' => $contacts]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $contacts = Contact::all();
+        return view('contacts', ['contacts' => $contacts]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $validate =$request->validate([
+            'date' => 'required|date',
+            'hour' => 'required|string',
+            'name' => 'required|string',
+            'email' => 'required|string',
+            'phone' => 'required|string',
+            'comment' => 'required|string',
+            'isArchived' => 'required|boolean',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
+        $contacts = new Contact();
+        $contacts ->date = $validated['date'];
+        $contacts ->name = $validated['name'];
+        $contacts ->email = $validated['email'];
+        $contacts ->phone = $validated['phone'];
+        $contacts ->comment = $validated['comment'];
+        $contacts ->isArchived = $validated['isArchived'];
+
+        $contacts->save();
+        return ('Contact created');
+    }
     public function show(string $id)
     {
-        //
+        $contacts = Contact::findOrFail($id);
+        return response()->json($contacts);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request,string $id)
     {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    }
     public function destroy(string $id)
     {
-        //
+        try {
+            $contacts = Contact::find($id);
+            $contacts->delete();
+            return response()->json(['message' => 'Contact deleted']);
+        } catch (\Throwable $th) {
+            return('Contact not found');
+        }
     }
 }
